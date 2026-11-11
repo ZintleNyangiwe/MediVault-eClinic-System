@@ -1,21 +1,41 @@
-# MediVault e-Clinic System
+# MediVault e-Clinic System — Term 3
 
-MediVault is a healthcare web application designed to help patients access clinic and hospital services more easily. The system allows users to create an account, log in, and access healthcare-related services through a simple and user-friendly interface.
+This version implements the MediVault UI plus the Term 3 database/backend requirements.
 
-## Features
-- Landing/Home page
-- User Login page
-- Responsive design
-- Modern user interface
-- Easy navigation
+## Technology
+- HTML/CSS/JavaScript frontend
+- PHP 8.2 backend
+- MySQL 8 (existing MySQL80 service)
+- Apache from XAMPP
+- mysqli prepared statements
 
-## Technologies Used
-- HTML
-- CSS
-- JavaScript
+## Installation
+1. Keep the XAMPP Apache service running.
+2. Keep the Windows `MySQL80` service running. Do **not** start XAMPP's MariaDB/MySQL module if port 3306 is occupied by MySQL80.
+3. Copy this folder to `C:\xampp\htdocs\MediVault_T3_Final` (or use the existing project folder name).
+4. Check `config.php`. Default settings are `127.0.0.1`, port `3306`, user `root`, blank password, database `medivault`.
+5. Visit `http://localhost/MediVault_T3_Final/setup.php` once. This creates and seeds the database.
+6. Open `http://localhost/MediVault_T3_Final/`.
 
-## Purpose of the Project
-The purpose of this project is to improve access to healthcare services by creating a digital platform that is simple, efficient, and user-friendly.
+## Demo accounts
+Password for all seeded accounts: `Password123!`
+- Patient: `john.doe@medivault.local`
+- Staff: `mpho.mokoena@medivault.local`
+- Administrator: `admin1@medivault.local`
 
-## Developer
-Created by Zintle Nyangiwe
+## Implemented Term 3 functionality
+- Database connection to MySQL80
+- Registration with required-field, email, phone, password and duplicate validation
+- Password hashing with `password_hash()` / `password_verify()`
+- Role-based login and protected server-side endpoints
+- Login audit records
+- Patient search
+- Patient INSERT, UPDATE and DELETE (DELETE is administrator-only)
+- Patient appointments, medical records and medication retrieval
+- Staff appointment/record views
+- Administrator patient management
+- Foreign keys, unique constraints and enumerated status/role fields
+- Seed data with at least five records in each main table
+
+## Evidence note
+Do not mark a test as Pass until you have actually executed it and captured the required screenshot. The supplied testing template requires test ID, feature, input, expected result, actual result, pass/fail and screenshot evidence.
